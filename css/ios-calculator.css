@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: white;
+}
+
+.container {
+  background-color: black;
+  width: 450px;
+  margin: auto;
+  margin-top: 25px;
+  border-radius: 30px;
+}
+
+.display1 {
+  width: 100%;
+  border-radius: 30px;
+  height: 235px;
+}
+
+.rakamlar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 12vh);
+  padding: 10px 20px;
+}
+
+.kutu {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2.5rem;
+  margin-left: 3px;
+  margin-bottom: 9px;
+  background-color: rgb(56, 56, 56);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 85%;
+}
+
+.kutu17 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  border-radius: 0;
+  justify-content: left;
+  padding-left: 30px;
+  border-radius: 50px;
+  margin-left: 5px;
+  width: 200px;
+}
+
+.kutu1,
+.kutu2,
+.kutu3 {
+  background-color: #919a9e;
+  color: black;
+}
+
+.kutu4,
+.kutu8,
+.kutu12,
+.kutu16 {
+  background-color: rgb(229, 156, 20);
+}
+
+.kutu:hover {
+  background-color: #767d80;
+  cursor: grab;
+  transition: 0.3s;
+}
+
+.kutu1:hover,
+.kutu2:hover,
+.kutu3:hover {
+  background-color: #d7e5ea;
+  transition: 0.4s;
+  color: rgb(30, 27, 27);
+}
+
+.kutu4:hover,
+.kutu8:hover,
+.kutu12:hover,
+.kutu16:hover {
+  background-color: rgb(186, 133, 34);
+  transition: 0.35;
+  opacity: 0.8;
+}
