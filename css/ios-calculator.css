@@ -9,22 +9,23 @@ body {
 
 .container {
   background-color: black;
-  width: 450px;
+  width: 480px;
+  height: 770px;
   margin: auto;
-  margin-top: 25px;
+  margin-top: 15px;
   border-radius: 50px;
 }
 
 .display1 {
   width: 100%;
   border-radius: 30px;
-  height: 235px;
+  height: 255px;
 }
 
 .rakamlar {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(5, 12vh);
+  grid-template-rows: repeat(5, 98px);
   padding: 10px 20px;
 }
 
