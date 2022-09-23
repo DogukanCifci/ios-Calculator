@@ -23,7 +23,7 @@ body {
   padding-right: 15px;
   height: 150px;
   align-items: center;
-  font-size: 1rem;
+  font-size: 2rem;
   opacity: 0.5;
 }
 
@@ -34,7 +34,7 @@ body {
   padding-right: 15px;
   height: 150px;
   align-items: center;
-  font-size: 2rem;
+  font-size: 4rem;
 }
 .display1 {
   width: 100%;
