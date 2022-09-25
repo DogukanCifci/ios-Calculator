@@ -11,9 +11,7 @@ document.querySelectorAll(".kutu").forEach((a) => {
   a.onclick = () => {
     if (a.classList.contains("sayi")) {
       altYazi.textContent += a.textContent;
-    }
-
-    if (a.classList.contains("islem")) {
+    } else if (a.classList.contains("islem")) {
       islemler.push(a.textContent);
       ilkSayi = Number(altYazi.textContent);
       sayilar.push(ilkSayi);
@@ -34,14 +32,12 @@ document.querySelectorAll(".kutu").forEach((a) => {
       }
       ust_yazi.textContent = sayilar[0] + " " + a.textContent + " ";
       altYazi.textContent = "";
-    }
-
-    if (a.textContent == "=") {
+    } else if (a.textContent == "=") {
       sonSayi = Number(altYazi.textContent);
       if (islemler[0] == "+") sonuc = sayilar[0] + sonSayi;
       else if (islemler[0] == "-") sonuc = sayilar[0] - sonSayi;
       else if (islemler[0] == "x") sonuc = sayilar[0] * sonSayi;
-      else if (islemler[0] == "÷") sonuc = sayilar[0] / sonSayi;
+      else if (islemler[0] == "÷") sonuc = (sayilar[0] / sonSayi).toFixed(12);
 
       ust_yazi.textContent = " ";
       altYazi.textContent = sonuc;
@@ -49,6 +45,13 @@ document.querySelectorAll(".kutu").forEach((a) => {
       console.log("Esittir sonrasi", islemler);
       islemler.pop();
       sayilar.pop();
+    } else if (a.textContent == "AC") {
+      sayilar.splice(0, sayilar.length);
+      islemler.splice(0, islemler.length);
+      console.log(sayilar);
+      console.log(islemler);
+      altYazi.textContent = "";
+      ust_yazi.textContent = "";
     }
   };
 });
