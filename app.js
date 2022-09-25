@@ -12,6 +12,9 @@ let noktaControl = [];
 document.querySelectorAll(".kutu").forEach((a) => {
   a.onclick = () => {
     if (a.classList.contains("sayi")) {
+      if (altYazi.textContent == "0") {
+        if (a.textContent == "0") return;
+      }
       if (noktaControl.length > 0 && a.textContent == ".") return;
 
       altYazi.textContent += a.textContent;
