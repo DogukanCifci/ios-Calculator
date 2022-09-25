@@ -8,16 +8,18 @@ let sonSayi;
 let sayilar = [];
 let islemler = []; //sayilarin uzublugu 1den büyük oldugun da diye sart belirttigimiz icin 2. sayiyi girdigimizdeki islemi algiliyor. Bundan dolayi ilk islemi algilatmak icin listeye atayip ordan ilk islemi sectirtiyoruz. Daha sonra o ilk islemi gerceklestikten sonra silip ikinci islemi ilk islem olarak algilatiyoruz ve bu sirayla gidiyor
 let noktaControl = [];
+
 document.querySelectorAll(".kutu").forEach((a) => {
   a.onclick = () => {
     if (a.classList.contains("sayi")) {
+      if (noktaControl.length > 0 && a.textContent == ".") return;
+
       altYazi.textContent += a.textContent;
       if (a.textContent == ".") {
         noktaControl.push(".");
-        if (noktaControl.length > 1) return;
       }
-      if (noktaControl.length > 1) return;
     } else if (a.classList.contains("islem")) {
+      noktaControl.splice(0, noktaControl.length);
       if (altYazi.textContent == "") return;
 
       islemler.push(a.textContent);
@@ -41,6 +43,7 @@ document.querySelectorAll(".kutu").forEach((a) => {
       ust_yazi.textContent = sayilar[0] + " " + islemler[0] + " ";
       altYazi.textContent = "";
     } else if (a.textContent == "=") {
+      noktaControl.splice(0, noktaControl.length);
       sonSayi = Number(altYazi.textContent);
       if (islemler[0] == "+") sonuc = sayilar[0] + sonSayi;
       else if (islemler[0] == "-") sonuc = sayilar[0] - sonSayi;
@@ -70,6 +73,7 @@ document.querySelectorAll(".kutu").forEach((a) => {
       islemler.pop();
       sayilar.pop();
     } else if (a.textContent == "AC") {
+      noktaControl.splice(0, noktaControl.length);
       sayilar.splice(0, sayilar.length);
       islemler.splice(0, islemler.length);
       console.log(sayilar);
@@ -77,10 +81,12 @@ document.querySelectorAll(".kutu").forEach((a) => {
       altYazi.textContent = "";
       ust_yazi.textContent = "";
     } else if (a.textContent == "±") {
+      noktaControl.splice(0, noktaControl.length);
       number = Number(altYazi.textContent);
       number = number * -1;
       altYazi.textContent = number;
     } else if (a.textContent == "%") {
+      noktaControl.splice(0, noktaControl.length);
       //if (altYazi.textContent == "") return; Bosken bastigimizda 0 gözükmesini istemezsek bunu kullanabiliriz
 
       number = Number(altYazi.textContent);
