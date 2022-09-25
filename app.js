@@ -14,6 +14,7 @@ document.querySelectorAll(".kutu").forEach((a) => {
     if (a.classList.contains("sayi")) {
       if (altYazi.textContent == "0") {
         if (a.textContent == "0") return;
+        else if ((a.textContent = ".")) altYazi.textContent = "0";
         else altYazi.textContent = ""; //Ilk görünürken 0 olacak ama baska bir sayi girdigimizde o 0 kaybolsun diye
       }
       if (noktaControl.length > 0 && a.textContent == ".") return;
