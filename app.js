@@ -12,6 +12,7 @@ let noktaControl = [];
 document.querySelectorAll(".kutu").forEach((a) => {
   a.onclick = () => {
     if (a.classList.contains("sayi")) {
+      if (altYazi.textContent == "" && a.textContent == ".") return;
       if (altYazi.textContent == "0") {
         if (a.textContent == "0") return;
         else if (a.textContent == ".") altYazi.textContent = "0";
@@ -83,7 +84,7 @@ document.querySelectorAll(".kutu").forEach((a) => {
       islemler.splice(0, islemler.length);
       console.log(sayilar);
       console.log(islemler);
-      altYazi.textContent = "";
+      altYazi.textContent = "0";
       ust_yazi.textContent = "";
     } else if (a.textContent == "±") {
       noktaControl.splice(0, noktaControl.length);
@@ -100,26 +101,3 @@ document.querySelectorAll(".kutu").forEach((a) => {
     }
   };
 });
-
-const meyveler3 = [
-  "Armut",
-  "Ayva",
-  "Mango",
-  "Cilek",
-  "Erik",
-  "Karpuz",
-  "Kavun",
-  "Muz",
-];
-
-//Sadece dizilerde gecerli oldugu icin önce dizi icindeki elemani da split() metodu ile diziye cevirmem lazim
-const kelimeListHali = meyveler3[2].split("").reverse();
-console.log(kelimeListHali);
-
-//Tekrar eski halone getirmek icin join ile birlestirirz.
-const birlestirmeTekrar = kelimeListHali.join("");
-console.log(birlestirmeTekrar);
-// veya direk kisaca
-
-const kelimeListHali2 = meyveler3[5].split("").reverse().join("");
-console.log(kelimeListHali2);
